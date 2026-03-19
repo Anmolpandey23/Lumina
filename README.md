@@ -286,7 +286,7 @@ Chrome Extension                Backend
 - HTTPS-only communication (in production)
 - Content Security Policy compatible
 
-## 🎓 Key ML/Engineering Concepts Demonstrated
+##  Key ML/Engineering Concepts Demonstrated
 
 ### 1. **Semantic Chunking**
 - Respects document structure (headers, paragraphs)
@@ -316,7 +316,7 @@ Chrome Extension                Backend
 - Health checks and monitoring
 - Modular, testable architecture
 
-## 🔄 Extensibility & Scaling
+##  Extensibility & Scaling
 
 ### Swappable Components
 
@@ -377,7 +377,7 @@ Currently uses in-memory storage. For production:
 - Advanced caching strategies
 - Analytics and monitoring
 
-## 📊 Configuration & Customization
+##  Configuration & Customization
 
 ### Environment Variables
 All options in `config/.env.example`:
@@ -442,7 +442,7 @@ tail -f app.log
 2. Click **Errors** to view console errors
 3. Check Chrome DevTools: F12 → **Service Workers** tab
 
-## 📚 API Reference
+##  API Reference
 
 ### POST `/api/chat`
 Main endpoint for chat queries.
@@ -492,7 +492,7 @@ Clear session data.
 ### GET `/api/stats`
 Get system statistics (active sessions, queries, RAG stats).
 
-## 🎯 Production Deployment Guide
+##  Production Deployment Guide
 
 ### Docker Deployment
 ```dockerfile
@@ -547,7 +547,7 @@ spec:
           periodSeconds: 5
 ```
 
-## 🚀 Production Enhancements
+##  Production Enhancements
 
 ### Implemented
 - [x] User-supplied LLM provider / model / API key per request
