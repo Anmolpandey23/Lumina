@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Lumina",
+  "version": "1.0.0",
+  "description": "AI that illuminates every webpage - Ask questions and get answers grounded in page content using RAG",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "src/background/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/content/content.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "AI Browsing Copilot"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["src/popup/popup.css", "src/popup/popup.js"],
+      "matches": ["*://*/*"]
+    }
+  ]
+}

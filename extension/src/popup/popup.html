@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Lumina</h1>
+            <div class="header-icons">
+                <button id="settingsBtn" class="icon-btn" title="Settings">⚙️</button>
+                <button id="clearBtn" class="icon-btn" title="Clear chat">🗑️</button>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div id="chatMessages" class="chat-messages"></div>
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <span>Thinking...</span>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <div class="status-info" id="statusInfo">
+                <span id="pageTitle" class="page-title"></span>
+                <span id="tokenCount" class="token-count"></span>
+            </div>
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="queryInput" 
+                    placeholder="Ask something about this page..."
+                    autocomplete="off"
+                >
+                <button id="sendBtn" class="send-btn" title="Send">📤</button>
+            </div>
+            <div id="errorMessage" class="error-message hidden"></div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label for="apiUrl">Backend URL:</label>
+                    <input type="text" id="apiUrl" placeholder="http://localhost:8000">
+                </div>
+                <div class="setting-group">
+                    <label for="apiKey">Backend API Key (optional):</label>
+                    <input type="password" id="apiKey" placeholder="Your API key">
+                </div>
+                <div class="setting-group">
+                    <label for="llmProvider">LLM Provider:</label>
+                    <input type="text" id="llmProvider" placeholder="huggingface | gemini | openai | ollama">
+                </div>
+                <div class="setting-group">
+                    <label for="llmModel">Model Name:</label>
+                    <input type="text" id="llmModel" placeholder="meta-llama/Llama-3.1-8B-Instruct">
+                </div>
+                <div class="setting-group">
+                    <label for="llmApiKey">LLM API Key (optional):</label>
+                    <input type="password" id="llmApiKey" placeholder="Provider API key">
+                </div>
+                <div class="setting-group">
+                    <label class="checkbox">
+                        <input type="checkbox" id="enablePrivateMode">
+                        <span>Private Mode (don't store data)</span>
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <label for="maxTokens">Max Response Tokens:</label>
+                    <input type="number" id="maxTokens" value="500" min="100" max="2000">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="saveSettings" class="btn btn-primary">Save</button>
+                <button id="cancelSettings" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+        <script src="popup.js"></script>
+</body>
+</html>
